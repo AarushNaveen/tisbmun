@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registration | TISBMUN XXVI | The International School Bangalore Model United Nations</title>
+<meta name="description" content="TISBMUN XXVI, the Model United Nations conference at The International School Bangalore, 12–13 December 2026. India’s largest student-led MUN, with 1.5 lakh+ in prizes.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preload" href="fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<!--
+  Direction: the site as a conference handbook. A fixed navy cover panel holds identity,
+  dates and the contents; the reading column on parchment carries the information.
+  Assets: TISBMUN crest supplied by the organisers.
+  Icons: Solar icon set (Iconify, MIT). Fonts: Newsreader and Instrument Sans (OFL), self-hosted.
+  Motion: GSAP + ScrollTrigger, Lenis smooth scroll. No WebGL: an information page does not need it.
+-->
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body data-root="" data-start="registration">
+
+<aside class="side" aria-label="Conference">
+  <div class="side-top">
+    <a class="brand" href="https://www.tisb.org" target="_blank" rel="noopener" title="The International School Bangalore" aria-label="The International School Bangalore website, opens in a new tab"><img src="img/crest.webp" alt="" width="64" height="64"></a>
+    <div class="title">
+      <h1 class="t" data-intro><a href="overview" data-section="overview">TISBMUN <em>XXVI</em></a></h1>
+      <p data-intro>Model United Nations<br>12–13 December 2026<br>The International School Bangalore</p>
+    </div>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="side-menu">Menu</button>
+  </div>
+  <div class="side-menu" id="side-menu">
+  <nav class="sitenav" aria-label="Site" data-intro>
+    <ol class="toc">
+      <li><a href="overview" data-section="overview">Overview</a></li>
+      <li class="has-sub">
+        <div class="toc-row"><a href="committees" data-section="committees">Committees</a><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-committees" aria-label="Show committees"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9L12 15L5 9"/></svg></button></div>
+        <div class="sub-wrap" id="sub-committees"><ul class="sub">
+          <li><a href="committee/aippm">AIPPM</a></li>
+          <li><a href="committee/unoosa">UNOOSA</a></li>
+          <li><a href="committee/ecosoc">ECOSOC</a></li>
+          <li><a href="committee/disec">DISEC</a></li>
+          <li><a href="committee/unhrc">UNHRC</a></li>
+          <li><a href="committee/unsc">UNSC</a></li>
+          <li><a href="committee/icj">ICJ</a></li>
+          <li><a href="committee/ccc">CCC</a></li>
+          <li><a href="committee/starwars">Star Wars</a></li>
+        </ul></div>
+      </li>
+      <li><a href="documents" data-section="documents">Documents</a></li>
+      <li><a href="registration" data-section="registration">Registration</a></li>
+      <li><a href="venue" data-section="venue">Venue and contact</a></li>
+    </ol>
+  </nav>
+  <div class="side-foot" data-intro>
+    <a class="btn btn-reg" data-reg-link href="https://events.tisb.org/mun/" target="_blank" rel="noopener"><span class="lbl">Register</span><span class="arw" aria-hidden="true"><span class="arw-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8.5 7H17v8.5"/></svg></span><span class="arw-b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8.5 7H17v8.5"/></svg></span></span><span class="sr"> (opens the TISB events portal in a new tab)</span></a>
+  </div>
+  </div>
+</aside>
+
+<main>
+  <section class="sec overview" id="overview">
+    <div class="col">
+      <div class="ov-top">
+        <p class="lead" data-split data-lead>India’s largest student-led MUN</p>
+        <div class="ov-meta">
+          <p class="ov-note" data-intro-after><span class="ov-note-k">Dates</span><span class="ov-note-v">12–13 December 2026</span></p>
+          <p class="ov-note" data-intro-after><span class="ov-note-k">Venue</span><span class="ov-note-v">The International School Bangalore<br>NAFL Valley, Bengaluru</span></p>
+          <p class="ov-note" data-intro-after><span class="ov-note-k">Prizes</span><span class="ov-note-v">1.5 lakh+ in total</span></p>
+          <p class="ov-note" data-intro-after><span class="ov-note-k">Position papers</span><span class="ov-note-v">Not required for any committee.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="committees">
+    <div class="col">
+      <header class="sec-head"><h2>Committees</h2><p>Agendas will be announced with the background guides.</p></header>
+      <ol class="clist">
+        <li data-row><a class="crow" href="committee/aippm"><h3>AIPPM</h3>
+        <span class="full">All India Political Parties Meet</span><span class="ag" data-agenda-for="aippm"></span><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12H20M14 18L20 12L14 6"/></svg></a></li>
+        <li data-row><a class="crow" href="committee/unoosa"><h3>UNOOSA</h3>
+        <span class="full">United Nations Office for Outer Space Affairs</span><span class="ag" data-agenda-for="unoosa"></span><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12H20M14 18L20 12L14 6"/></svg></a></li>
+        <li data-row><a class="crow" href="committee/ecosoc"><h3>ECOSOC</h3>
+        <span class="full">Economic and Social Council</span><span class="ag" data-agenda-for="ecosoc"></span><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12H20M14 18L20 12L14 6"/></svg></a></li>
+        <li data-row><a class="crow" href="committee/disec"><h3>DISEC</h3>
+        <span class="full">Disarmament and International Security Committee</span><span class="ag" data-agenda-for="disec"></span><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12H20M14 18L20 12L14 6"/></svg></a></li>
+        <li data-row><a class="crow" href="committee/unhrc"><h3>UNHRC</h3>
+        <span class="full">United Nations Human Rights Council</span><span class="ag" data-agenda-for="unhrc"></span><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12H20M14 18L20 12L14 6"/></svg></a></li>
+        <li data-row><a class="crow" href="committee/unsc"><h3>UNSC</h3>
+        <span class="full">United Nations Security Council</span><span class="ag" data-agenda-for="unsc"></span><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12H20M14 18L20 12L14 6"/></svg></a></li>
+        <li data-row><a class="crow" href="committee/icj"><h3>ICJ</h3>
+        <span class="full">International Court of Justice</span><span class="ag" data-agenda-for="icj"></span><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12H20M14 18L20 12L14 6"/></svg></a></li>
+        <li data-row><a class="crow" href="committee/ccc"><h3>CCC</h3>
+        <span class="full">Continuous Crisis Committee</span><span class="ag" data-agenda-for="ccc"></span><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12H20M14 18L20 12L14 6"/></svg></a></li>
+        <li data-row><a class="crow" href="committee/starwars"><h3>Star Wars</h3>
+        <span class="full">Special Committee</span><span class="ag" data-agenda-for="starwars"></span><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12H20M14 18L20 12L14 6"/></svg></a></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="documents">
+    <div class="col">
+      <header class="sec-head"><h2>Documents</h2><p>The TISBMUN XXVI documents will be published here before the conference.</p></header>
+      <ul class="dlist" id="doc-list"></ul>
+      <div id="doc-embeds"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="registration">
+    <div class="col">
+      <header class="sec-head"><h2>Registration</h2></header>
+      
+      <div class="reg-ctas" data-rise>
+        <a class="btn btn-reg" data-reg-link href="https://events.tisb.org/mun/" target="_blank" rel="noopener"><span class="lbl">Register</span><span class="arw" aria-hidden="true"><span class="arw-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8.5 7H17v8.5"/></svg></span><span class="arw-b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8.5 7H17v8.5"/></svg></span></span><span class="sr"> (opens the TISB events portal in a new tab)</span></a>
+        <p class="reg-note">Delegates can register through the TISB events portal.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="venue">
+    <div class="col">
+      <header class="sec-head"><h2>Venue and contact</h2></header>
+      <div class="venue">
+        <div data-rise>
+          <div class="vblock">
+            <h3>Venue</h3>
+            <p>The International School Bangalore<br>NAFL Valley, Whitefield–Sarjapur Road<br>Near Dommasandra Circle<br>Bengaluru, Karnataka 562125</p>
+            <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=The+International+School+Bangalore+NAFL+Valley+Bengaluru" target="_blank" rel="noopener">Open in Google Maps <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M18 15V6H9"/></svg></a>
+          </div>
+          <div class="vblock">
+            <h3>Organisers</h3>
+            <p><a href="mailto:tisbmun@tisb.ac.in">tisbmun@tisb.ac.in</a></p>
+          </div>
+          <div class="vblock">
+            <h3>Secretaries-General</h3>
+            <p>Aarush Naveen<br><a href="mailto:naaarush@tisb.ac.in">naaarush@tisb.ac.in</a></p>
+            <p style="margin-top:12px">Atharv Rao<br><a href="mailto:ratharv@tisb.ac.in">ratharv@tisb.ac.in</a></p>
+          </div>
+          <div class="vblock">
+            <h3>Faculty Advisor</h3>
+            <p>Mr. Anubhab Chatterjee<br><a href="mailto:canubhab@tisb.ac.in">canubhab@tisb.ac.in</a></p>
+          </div>
+        </div>
+        <div class="map" data-rise>
+          <iframe title="Map of The International School Bangalore"
+            src="https://www.google.com/maps?q=The+International+School+Bangalore,+NAFL+Valley,+Sarjapur+Road,+Bengaluru,+Karnataka+562125&amp;output=embed"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="col"><span>© 2026 TISBMUN, The International School Bangalore</span>
+  <a href="overview" data-section="overview">Back to top</a></div>
+</footer>
+
+<script src="js/gsap.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
+<script src="js/CustomEase.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

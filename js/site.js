@@ -66,13 +66,53 @@ if (sub) {
                              { rootMargin: '-30% 0px -50% 0px' }).observe(sec);
 }
 
-/* ---------- Contents highlight for in-page links ---------- */
-const hashLinks = [...document.querySelectorAll('.toc a[href^="#"]')];
-if (hashLinks.length) {
-  const io = new IntersectionObserver(entries => entries.forEach(e => {
-    if (e.isIntersecting) hashLinks.forEach(a => a.setAttribute('aria-current', a.hash === '#' + e.target.id ? 'true' : 'false'));
-  }), { rootMargin: '-40% 0px -55% 0px' });
-  document.querySelectorAll('main .sec[id]').forEach(s => io.observe(s));
+/* ---------- Clean section addresses: /committees, /venue … (no index.html, no #) ---------- */
+const navLinks = [...document.querySelectorAll('.toc a[data-section]')];
+const onHome = !document.body.dataset.committee;
+const padTop = () => parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+const goTo = (id, behavior) => {
+  const el = document.getElementById(id); if (!el) return;
+  const top = id === 'overview' ? 0 : el.getBoundingClientRect().top + scrollY - padTop();
+  window.scrollTo({ top, behavior });
+};
+if (onHome) {
+  const start = document.body.dataset.start;
+  if (start && start !== 'overview') {
+    goTo(start, 'instant');
+    /* fonts can shift the page after the first jump: settle once they and everything else have loaded */
+    const settle = () => { if (scrollY < 2 || Math.abs(document.getElementById(start).getBoundingClientRect().top - padTop()) > 2) goTo(start, 'instant'); };
+    if (document.fonts) document.fonts.ready.then(settle);
+    addEventListener('load', settle, { once: true });
+  }
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[data-section]');
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    goTo(a.dataset.section, 'smooth');
+    history.pushState({ section: a.dataset.section }, '', a.getAttribute('href'));
+  });
+  addEventListener('popstate', () => {
+    const id = location.pathname.replace(/\/$/, '').split('/').pop().replace(/\.html$/, '');
+    const target = document.getElementById(id) ? id : 'overview';
+    goTo(target, 'instant');   // Back/Forward jump, as browsers normally do
+    /* some browsers start their own scroll right after a history step: hold the position briefly */
+    let n = 0; const hold = () => { goTo(target, 'instant'); if (++n < 30) requestAnimationFrame(hold); };
+    requestAnimationFrame(hold);
+  });
+  /* the site does its own scrolling for these addresses, so the browser shouldn't restore old positions */
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  /* contents highlight: the last section whose top has passed 30% of the screen */
+  const secs = [...document.querySelectorAll('main .sec[id]')];
+  let ticking = false;
+  const spy = () => {
+    ticking = false;
+    const line = innerHeight * .3;
+    let cur = secs[0];
+    for (const s of secs) if (s.getBoundingClientRect().top <= line) cur = s;
+    navLinks.forEach(a => a.setAttribute('aria-current', a.dataset.section === cur.id ? 'true' : 'false'));
+  };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(spy); } }, { passive: true });
+  addEventListener('resize', spy); spy();
 }
 
 /* ---------- Motion ----------
@@ -121,7 +161,7 @@ if (after.length) intro.from(after, { y: RISE, opacity: 0, stagger: { amount: .1
 }
 
 const below = el => el.getBoundingClientRect().top > window.innerHeight;
-const revealOnScroll = !location.hash;
+const revealOnScroll = !location.hash && !(document.body.dataset.start && document.body.dataset.start !== 'overview');
 
 // Each section: heading, then its note.
 if (revealOnScroll) document.querySelectorAll('main .sec-head').forEach(head => {
